@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramador de Red</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <style>
+        #diagrama-red {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+        }
+        .tarjeta-dispositivo {
+            margin-bottom: 15px;
+        }
+        .cargando {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        .spinner-cargando {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Diagramador de Red</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1>Diagramador de Red</h1>
+                <button id="boton-escanear" class="btn btn-primary mb-4">Iniciar Escaneo</button>
+                <button id="boton-descargar-todos" class="btn btn-secondary mb-4 ml-2">Descargar todas las vulnerabilidades</button>
+            </div>
+        </div>
+
+        <div class="cargando">
+            <div class="spinner-border spinner-cargando" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <p>Escaneando la red, por favor espere...</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Dispositivos Encontrados</h2>
+                <div id="lista-dispositivos" class="row">
+                    <!-- Los dispositivos se agregarán aquí dinámicamente -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Diagrama de Red</h2>
+                <button id="boton-descargar-imagen" class="btn btn-success mb-4 ml-2">Descargar Diagrama como Imagen</button>
+
+                <div id="diagrama-red"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalVulnerabilidades" tabindex="-1" aria-labelledby="modalVulnerabilidadesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVulnerabilidadesLabel">Vulnerabilidades Detectadas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="contenidoVulnerabilidades">
+                    <!-- El contenido de las vulnerabilidades se insertará aquí -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="descargarPDFVulnerabilidades">Descargar PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('boton-descargar-imagen').addEventListener('click', function() {
+            html2canvas(document.getElementById('diagrama-red')).then(canvas => {
+                let link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'diagrama_red.png';
+                link.click();
+            }).catch(error => {
+                console.error('Error al capturar el diagrama:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo descargar la imagen del diagrama. Intente nuevamente.'
+                });
+            });
+        });
+        
+
+
+
+        let red;
+        let dispositivoActual;
+
+        document.getElementById('boton-escanear').addEventListener('click', function() {
+            this.disabled = true;
+            this.textContent = 'Escaneando...';
+            document.querySelector('.cargando').style.display = 'block';
+
+            fetch('/escanear')
+                .then(response => response.json())
+                .then(datos => {
+                    actualizarListaDispositivos(datos.dispositivos);
+                    crearDiagramaRed(datos.datos_red);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Ocurrió un error durante el escaneo. Por favor, intenta de nuevo.'
+                    });
+                })
+                .finally(() => {
+                    this.disabled = false;
+                    this.textContent = 'Iniciar Escaneo';
+                    document.querySelector('.cargando').style.display = 'none';
+                });
+        });
+
+        function actualizarListaDispositivos(dispositivos) {
+            const listaDispositivos = document.getElementById('lista-dispositivos');
+            listaDispositivos.innerHTML = '';
+
+            dispositivos.forEach(dispositivo => {
+                const tarjetaDispositivo = `
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${dispositivo.ip}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">${dispositivo.mac}</h6>
+                                <p class="card-text">Fabricante: ${dispositivo.fabricante}</p>
+                                <button class="btn btn-info btn-sm ver-vulnerabilidades" data-ip="${dispositivo.ip}">Ver Vulnerabilidades</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                listaDispositivos.innerHTML += tarjetaDispositivo;
+            });
+
+            // Agregar event listeners a los botones de vulnerabilidades
+            document.querySelectorAll('.ver-vulnerabilidades').forEach(boton => {
+                boton.addEventListener('click', function() {
+                    const ip = this.getAttribute('data-ip');
+                    dispositivoActual = ip;
+                    mostrarVulnerabilidades(ip);
+                });
+            });
+        }
+
+        function crearDiagramaRed(datosRed) {
+            const contenedor = document.getElementById('diagrama-red');
+
+            datosRed.nodes.forEach(nodo => {
+                if (nodo.label.toLowerCase() === 'Desconocido' && nodo.fabricante) {
+                    nodo.label = nodo.fabricante;
+                }
+            });
+
+            const opciones = {
+                nodes: {
+                    font: {
+                        size: 12,
+                        color: '#333'
+                    },
+                    borderWidth: 2
+                },
+                edges: {
+                    width: 2,
+                    smooth: {
+                        type: 'cubicBezier',
+                        forceDirection: 'vertical',
+                        roundness: 0.4
+                    }
+                },
+                layout: {
+                    hierarchical: {
+                        direction: "UD",
+                        sortMethod: "directed",
+                        levelSeparation: 150,
+                        nodeSpacing: 100,
+                        treeSpacing: 200
+                    }
+                },
+                physics: {
+                    hierarchicalRepulsion: {
+                        centralGravity: 0.0,
+                        springLength: 100,
+                        springConstant: 0.01,
+                        nodeDistance: 120,
+                        damping: 0.09
+                    },
+                    solver: 'hierarchicalRepulsion'
+                },
+                interaction: {
+                    tooltipDelay: 200,
+                    hideEdgesOnDrag: true,
+                    zoomView: true
+                }
+            };
+        
+            red = new vis.Network(contenedor, datosRed, opciones);
+        
+            red.on('click', function(params) {
+                if (params.nodes.length > 0) {
+                    const idNodo = params.nodes[0];
+                    const nodo = red.body.data.nodes.get(idNodo);
+                    Swal.fire({
+                        title: 'Detalles del Dispositivo',
+                        html: nodo.title,
+                        icon: 'info'
+                    });
+                }
+            });
+
+            red.on("stabilizationIterationsDone", function () {
+                red.setOptions( { physics: false } );
+            });
+        }
+
+        function mostrarVulnerabilidades(ip) {
+            var modalVulnerabilidades = new bootstrap.Modal(document.getElementById('modalVulnerabilidades'));
+        modalVulnerabilidades.show();
+        
+        document.getElementById('contenidoVulnerabilidades').innerHTML = '<p>Cargando vulnerabilidades...</p>';
+        
+        fetch(`/vulnerabilidades/${ip}`)
+            .then(response => response.json())
+            .then(datos => {
+                let contenido = '';
+                datos.forEach(puerto => {
+                    contenido += `<h4>Puerto ${puerto.puerto} - ${puerto.servicio} ${puerto.version}</h4>`;
+                    contenido += `<p>Banner: ${puerto.banner}</p>`;
+                    if (puerto.vulnerabilidades.length > 0) {
+                        contenido += '<ul>';
+                        puerto.vulnerabilidades.forEach(vuln => {
+                            contenido += `<li><strong>${vuln.cve}</strong>: ${vuln.descripcion}`;
+                            if (vuln.cvss_v3_score !== null) {
+                                contenido += ` <span class="badge bg-warning">CVSS v3: ${vuln.cvss_v3_score}</span>`;
+                            }
+                            contenido += '</li>';
+                        });
+                        contenido += '</ul>';
+                    } else {
+                        contenido += '<p>No se encontraron vulnerabilidades conocidas.</p>';
+                    }
+                });
+                document.getElementById('contenidoVulnerabilidades').innerHTML = contenido;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('contenidoVulnerabilidades').innerHTML = '<p>Error al cargar las vulnerabilidades.</p>';
+            });
+        }
+
+        // Agregar event listener para el botón de descargar PDF
+        document.getElementById('descargarPDFVulnerabilidades').addEventListener('click', function() {
+            if (dispositivoActual) {
+                window.location.href = `/generar_pdf/${dispositivoActual}`;
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se ha seleccionado ningún dispositivo.'
+                });
+            }
+        });
+
+        // Agregar event listener para el botón de descargar todas las vulnerabilidades
+        document.getElementById('boton-descargar-todos').addEventListener('click', function() {
+            this.disabled = true;
+            this.textContent = 'Generando PDF...';
+
+            fetch('/generar_pdf_todos')
+                .then(response => {
+                    if (response.ok) {
+                        return response.blob();
+                    } else {
+                        throw new Error('Error al generar el PDF');
+                    }
+                })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'vulnerabilidades_todas.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    Swal.fire('Descarga completa', 'El PDF de todas las vulnerabilidades se ha descargado con éxito', 'success');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'No se pudo descargar el PDF de todas las vulnerabilidades. Intente nuevamente.'
+                    });
+                })
+                .finally(() => {
+                    this.disabled = false;
+                    this.textContent = 'Descargar todas las vulnerabilidades';
+                });
+        });
+        
+        
+    </script>
+</body>
+</html>

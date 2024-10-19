@@ -1,0 +1,504 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "nmap",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "nmap",
+        "description": "nmap",
+        "detail": "nmap",
+        "documentation": {}
+    },
+    {
+        "label": "ARP",
+        "importPath": "scapy.all",
+        "description": "scapy.all",
+        "isExtraImport": true,
+        "detail": "scapy.all",
+        "documentation": {}
+    },
+    {
+        "label": "Ether",
+        "importPath": "scapy.all",
+        "description": "scapy.all",
+        "isExtraImport": true,
+        "detail": "scapy.all",
+        "documentation": {}
+    },
+    {
+        "label": "srp",
+        "importPath": "scapy.all",
+        "description": "scapy.all",
+        "isExtraImport": true,
+        "detail": "scapy.all",
+        "documentation": {}
+    },
+    {
+        "label": "sniff",
+        "importPath": "scapy.all",
+        "description": "scapy.all",
+        "isExtraImport": true,
+        "detail": "scapy.all",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_file",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "LLDPDU",
+        "importPath": "scapy.contrib.lldp",
+        "description": "scapy.contrib.lldp",
+        "isExtraImport": true,
+        "detail": "scapy.contrib.lldp",
+        "documentation": {}
+    },
+    {
+        "label": "Dot3",
+        "importPath": "scapy.layers.l2",
+        "description": "scapy.layers.l2",
+        "isExtraImport": true,
+        "detail": "scapy.layers.l2",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "canvas",
+        "importPath": "reportlab.pdfgen",
+        "description": "reportlab.pdfgen",
+        "isExtraImport": true,
+        "detail": "reportlab.pdfgen",
+        "documentation": {}
+    },
+    {
+        "label": "letter",
+        "importPath": "reportlab.lib.pagesizes",
+        "description": "reportlab.lib.pagesizes",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.pagesizes",
+        "documentation": {}
+    },
+    {
+        "label": "colors",
+        "importPath": "reportlab.lib",
+        "description": "reportlab.lib",
+        "isExtraImport": true,
+        "detail": "reportlab.lib",
+        "documentation": {}
+    },
+    {
+        "label": "inch",
+        "importPath": "reportlab.lib.units",
+        "description": "reportlab.lib.units",
+        "isExtraImport": true,
+        "detail": "reportlab.lib.units",
+        "documentation": {}
+    },
+    {
+        "label": "lru_cache",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "ClientSession",
+        "importPath": "aiohttp",
+        "description": "aiohttp",
+        "isExtraImport": true,
+        "detail": "aiohttp",
+        "documentation": {}
+    },
+    {
+        "label": "Celery",
+        "importPath": "celery",
+        "description": "celery",
+        "isExtraImport": true,
+        "detail": "celery",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "app",
+        "description": "app",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "celery",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "sphinx_rtd_theme",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sphinx_rtd_theme",
+        "description": "sphinx_rtd_theme",
+        "detail": "sphinx_rtd_theme",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "get_local_ip",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def get_local_ip():\n    \"\"\"\n    Obtiene la dirección IP local de la máquina actual.\n    Returns:\n        str: Dirección IP local si se puede obtener, o None si ocurre un error.\n    \"\"\"\n    try:\n        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:\n            s.connect((\"8.8.8.8\", 80))\n            return s.getsockname()[0]",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_fabricante",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def obtener_fabricante(mac):\n    \"\"\"\n    Obtiene el nombre del fabricante basado en la dirección MAC.\n    Parameters:\n        mac (str): Dirección MAC en formato de cadena sin separadores.\n    Returns:\n        str: Nombre del fabricante si se encuentra en la base de datos, 'Desconocido' si no.\n    \"\"\"\n    mac_prefix = mac[:8].upper()\n    for vendor in mac_vendors:",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "escanear_red",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def escanear_red():\n    \"\"\"\n    Escanea la red local para detectar dispositivos conectados, sus direcciones IP, MAC y fabricantes.\n    Returns:\n        list[dict]: Lista de diccionarios con información de dispositivos:\n            - ip (str): Dirección IP del dispositivo.\n            - mac (str): Dirección MAC del dispositivo.\n            - fabricante (str): Nombre del fabricante del dispositivo.\n            - es_switch (bool): Indica si el dispositivo es un switch (opcional).\n    \"\"\"",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "escaneo_nmap",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def escaneo_nmap(ip):\n    \"\"\"\n    Realiza un escaneo de puertos y detección de sistema operativo en un dispositivo dado.\n    Parameters:\n        ip (str): Dirección IP del dispositivo a escanear.\n    Returns:\n        dict: Información detallada del dispositivo:\n            - sistema_operativo (str): Nombre del sistema operativo detectado.\n            - nombre_host (str): Nombre del host.\n            - fabricante (str): Fabricante detectado del dispositivo.",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "buscar_vulnerabilidades",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def buscar_vulnerabilidades(servicio, version):\n    \"\"\"\n    Busca vulnerabilidades asociadas a un servicio y versión específicos.\n    Parameters:\n        servicio (str): Nombre del servicio.\n        version (str): Versión del servicio.\n    Returns:\n        list[dict]: Lista de vulnerabilidades encontradas con detalles.\n    \"\"\"\n    keyword = f\"{servicio} {version}\"",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "identificar_tipo_dispositivo",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def identificar_tipo_dispositivo(info_dispositivo, fabricante, ip, es_switch=False):\n    \"\"\"\n    Identifica el tipo de dispositivo basado en la información obtenida.\n    Parameters:\n        info_dispositivo (dict): Información del dispositivo obtenida por Nmap.\n        fabricante (str): Nombre del fabricante.\n        ip (str): Dirección IP del dispositivo.\n        es_switch (bool): Indica si el dispositivo es un switch.\n    Returns:\n        str: Tipo de dispositivo ('router', 'switch', 'dispositivo' o 'desconocido').",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def index():\n    return render_template('index.html')\n@app.route('/vulnerabilidades/<ip>', methods=['GET'])\ndef obtener_vulnerabilidades(ip):\n    \"\"\"\n    Obtiene las vulnerabilidades asociadas a un dispositivo escaneado por su IP.\n    Parameters:\n        ip (str): Dirección IP del dispositivo.\n    Returns:\n        Response: Respuesta JSON con la lista de vulnerabilidades encontradas para cada puerto abierto.",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_vulnerabilidades",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def obtener_vulnerabilidades(ip):\n    \"\"\"\n    Obtiene las vulnerabilidades asociadas a un dispositivo escaneado por su IP.\n    Parameters:\n        ip (str): Dirección IP del dispositivo.\n    Returns:\n        Response: Respuesta JSON con la lista de vulnerabilidades encontradas para cada puerto abierto.\n    \"\"\"\n    # Usar la cache en la función para evitar repetir el escaneo\n    info_dispositivo = escaneo_nmap(ip)",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "escanear",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def escanear():\n    \"\"\"\n    Escanea la red para detectar dispositivos y genera datos de topología.\n    Returns:\n        Response: Respuesta JSON con la lista de dispositivos encontrados y la estructura de la red.\n    \"\"\"\n    dispositivos = escanear_red()\n    datos_red = {'nodes': [], 'edges': []}\n    routers, switches, otros_dispositivos = [], [], []\n    with ThreadPoolExecutor() as executor:",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "agregar_texto",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def agregar_texto(p, texto, x, y, font_size=10, color=colors.black, salto_linea=14, max_width=500):\n    \"\"\"\n    Agrega texto a un PDF respetando el ancho máximo y la posición.\n    Parameters:\n        p (canvas.Canvas): Objeto de canvas de ReportLab.\n        texto (str): Texto a agregar al PDF.\n        x (float): Posición X de inicio.\n        y (float): Posición Y de inicio.\n        font_size (int): Tamaño de la fuente del texto.\n        color (Color): Color del texto.",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "generar_pdf",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def generar_pdf(ip):\n    \"\"\"\n    Genera un archivo PDF con las vulnerabilidades detectadas para un dispositivo específico.\n    Parameters:\n        ip (str): Dirección IP del dispositivo.\n    Returns:\n        Response: PDF generado con información sobre vulnerabilidades.\n    \"\"\"\n    info_dispositivo = escaneo_nmap(ip)\n    buffer = BytesIO()",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "generar_pdf_todos",
+        "kind": 2,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "def generar_pdf_todos():\n    \"\"\"\n    Genera un archivo PDF con las vulnerabilidades detectadas para todos los dispositivos encontrados en la red.\n    Returns:\n        Response: PDF generado con información sobre vulnerabilidades de todos los dispositivos.\n    \"\"\"\n    dispositivos = escanear_red()\n    buffer = BytesIO()\n    p = canvas.Canvas(buffer, pagesize=letter)\n    width, height = letter",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "app = Flask(__name__)\n# Carga la base de datos de MAC una sola vez al inicio\nif not os.getenv('SPHINX_BUILD'):\n    with open('mac-vendors-export.json', 'r', encoding='utf-8') as f:\n        mac_vendors = json.load(f)\ndef get_local_ip():\n    \"\"\"\n    Obtiene la dirección IP local de la máquina actual.\n    Returns:\n        str: Dirección IP local si se puede obtener, o None si ocurre un error.",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "local_ip",
+        "kind": 5,
+        "importPath": "Codigo.app",
+        "description": "Codigo.app",
+        "peekOfCode": "local_ip = get_local_ip()\nprint(f\"La dirección IP local es: {local_ip}\")\n@lru_cache(maxsize=1024)\ndef obtener_fabricante(mac):\n    \"\"\"\n    Obtiene el nombre del fabricante basado en la dirección MAC.\n    Parameters:\n        mac (str): Dirección MAC en formato de cadena sin separadores.\n    Returns:\n        str: Nombre del fabricante si se encuentra en la base de datos, 'Desconocido' si no.",
+        "detail": "Codigo.app",
+        "documentation": {}
+    },
+    {
+        "label": "make_celery",
+        "kind": 2,
+        "importPath": "Codigo.celery_worker",
+        "description": "Codigo.celery_worker",
+        "peekOfCode": "def make_celery(app):\n    celery = Celery(\n        app.import_name,\n        backend=app.config['CELERY_RESULT_BACKEND'],\n        broker=app.config['CELERY_BROKER_URL']\n    )\n    celery.conf.update(app.config)\n    class ContextTask(celery.Task):\n        def __call__(self, *args, **kwargs):\n            with app.app_context():",
+        "detail": "Codigo.celery_worker",
+        "documentation": {}
+    },
+    {
+        "label": "project",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "project = 'NetScan'\ncopyright = '2024, Bryan Jancarlo Sosa Mejía'\nauthor = 'Bryan Jancarlo Sosa Mejía'\nrelease = '1'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "copyright",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "copyright = '2024, Bryan Jancarlo Sosa Mejía'\nauthor = 'Bryan Jancarlo Sosa Mejía'\nrelease = '1'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "author",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "author = 'Bryan Jancarlo Sosa Mejía'\nrelease = '1'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]\ntemplates_path = ['_templates']",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "release",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "release = '1'\n# -- General configuration ---------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration\nextensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]\ntemplates_path = ['_templates']\nexclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "extensions",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "extensions = [\n    'myst_parser',\n    'sphinx_copybutton',\n    'sphinx.ext.autodoc',\n]\ntemplates_path = ['_templates']\nexclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']\nlanguage = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "templates_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "templates_path = ['_templates']\nexclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']\nlanguage = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output\nimport sphinx_rtd_theme\nhtml_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "exclude_patterns",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']\nlanguage = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output\nimport sphinx_rtd_theme\nhtml_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  ",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "language",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "language = 'es'\n# -- Options for HTML output -------------------------------------------------\n# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output\nimport sphinx_rtd_theme\nhtml_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_theme = 'sphinx_rtd_theme'\nhtml_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}\n#html_theme = 'alabaster'\n#html_static_path = ['_static']\nimport os\nimport sys",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_static_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_static_path = ['_static']\nhtml_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}\n#html_theme = 'alabaster'\n#html_static_path = ['_static']\nimport os\nimport sys\nsys.path.insert(0, os.path.abspath('../Codigo'))",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "html_theme_options",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "html_theme_options = {\n    'collapse_navigation': False,  # Establecer en False para mantener el índice abierto\n    'display_version': True,  \n}\n#html_theme = 'alabaster'\n#html_static_path = ['_static']\nimport os\nimport sys\nsys.path.insert(0, os.path.abspath('../Codigo'))\n# Configuración para desactivar el comportamiento en `app.py` que requiere el archivo JSON",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "#html_theme",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "#html_theme = 'alabaster'\n#html_static_path = ['_static']\nimport os\nimport sys\nsys.path.insert(0, os.path.abspath('../Codigo'))\n# Configuración para desactivar el comportamiento en `app.py` que requiere el archivo JSON\nos.environ['SPHINX_BUILD'] = '1'\nimport app\n# Configuración para Read the Docs\nif os.environ.get('READTHEDOCS'):",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "#html_static_path",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "#html_static_path = ['_static']\nimport os\nimport sys\nsys.path.insert(0, os.path.abspath('../Codigo'))\n# Configuración para desactivar el comportamiento en `app.py` que requiere el archivo JSON\nos.environ['SPHINX_BUILD'] = '1'\nimport app\n# Configuración para Read the Docs\nif os.environ.get('READTHEDOCS'):\n    html_output = os.path.join(os.environ['READTHEDOCS_OUTPUT'], 'html')",
+        "detail": "docs.conf",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ['SPHINX_BUILD']",
+        "kind": 5,
+        "importPath": "docs.conf",
+        "description": "docs.conf",
+        "peekOfCode": "os.environ['SPHINX_BUILD'] = '1'\nimport app\n# Configuración para Read the Docs\nif os.environ.get('READTHEDOCS'):\n    html_output = os.path.join(os.environ['READTHEDOCS_OUTPUT'], 'html')\n    os.makedirs(html_output, exist_ok=True)",
+        "detail": "docs.conf",
+        "documentation": {}
+    }
+]

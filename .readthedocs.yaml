@@ -1,0 +1,25 @@
+# .readthedocs.yml
+
+# Required
+version: 2
+
+# Set the OS, Python version and other tools you might need
+build:
+  os: ubuntu-22.04  # Especifica el sistema operativo que deseas usar
+  tools:
+    python: "3.12"
+
+# Build documentation in the "docs/" directory with Sphinx
+sphinx:
+  configuration: docs/conf.py  # Asegúrate de que la ruta a conf.py sea correcta
+
+# Optionally build your docs in additional formats such as PDF and ePub
+# formats:
+#   - pdf
+#   - epub
+
+# Optional but recommended, declare the Python requirements required
+# to build your documentation
+python:
+  install:
+    - requirements: docs/requirements.txt  # Especifica los requisitos para Sphinx si tienes este archivo

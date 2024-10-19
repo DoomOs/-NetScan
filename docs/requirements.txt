@@ -1,0 +1,10 @@
+sphinx
+myst-parser
+sphinx-copybutton
+sphinx_rtd_theme
+nmap-python
+scapy
+Flask
+requests
+reportlab
+aiohttp
