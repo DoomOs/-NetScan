@@ -6,7 +6,7 @@
 NetScan Documentacion
 =====================
 
-NetScan es un proyecto universitario para el curso de Telecomunicaciones, es un escaner de redes lan, que identifica dispisitivos, puertos abierto, posibles vulnerabilidades capaz de generar un diagrama de red y reportes de las vulnerabilidades en pdf
+NetScan es un proyecto universitario para el curso de Telecomunicaciones, es un escáner de redes LAN, que identifica dispositivos, puertos abierto, posibles vulnerabilidades capaz de generar un diagrama de red y reportes de las vulnerabilidades en PDF
 
 
 
