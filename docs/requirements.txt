@@ -2,7 +2,7 @@ sphinx
 myst-parser
 sphinx-copybutton
 sphinx_rtd_theme
-nmap-python
+python-nmap
 scapy
 Flask
 requests
